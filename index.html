@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Handson 12</title>
+    
+</head>
+<body>
+    <h1>JAVA SCRIPT</h1>
+    <h3>----ASYNC AWAIT AND PROMISES----</h3>
+    <p>Q.1 Write one example explaining how you can write a callback function ?</p>
+    <p><pre>Ans.1 const posts = [
+        {id: 1, name: 'Post One', desc: 'Post One Desc'},
+        {id: 2, name: 'Post Two', desc: 'Post Two Desc'},
+        {id: 3, name: 'Post Three', desc: 'Post Three Desc'},
+        {id: 4, name: 'Post Four', desc: 'Post Four Desc'},
+        {id: 5, name: 'Post Five', desc: 'Post Five Desc'}
+    ]
+    const addPost = (post, callback1) => {
+        setTimeout( () => {
+            posts.push(post)
+            callback1()
+        }, 5000 )
+    }
+    
+    const showPosts = ( ) => {
+        setTimeout( () => {
+            posts.forEach( post => console.log(post.name) )
+        }, 3000 )
+    }
+    
+    const fun = () => {
+        console.log('Print Completed...')
+    }
+    
+    addPost( {id: 6, name: 'Post Six', desc: 'Post Six Desc'}, showPosts )
+    </pre>
+    </p>
+    <p>Q.2 <pre> Write callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec , 2 should be printed after 2 sec, 3 should be printed after 3 sec and so on. 
+
+        Explain callback hell.
+        Numbers
+        1
+        2
+        3
+        4
+        5
+        6
+        7 ?</pre></p>
+    <p><pre>Ans.2 function calhell(){
+        setTimeout(() => {
+            console.log("1");
+            setTimeout(() => {
+                console.log("2")
+                setTimeout(() => {
+                    console.log("3")
+                    setTimeout(() => {
+                        console.log("4")
+                        setTimeout(() => {
+                            console.log("5")
+                            setTimeout(() => {
+                                console.log("6")
+                                setTimeout(() => {
+                                    console.log("7")
+                                }, 1000);
+                            }, 1000);
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }, 1000);
+                    
+    }
+    
+    calhell();
+    </pre>
+    </p>
+    <p>Q.3 Retrieve the details of students who scored more than 50 marks and have id greater than 120. ?</p>
+    <p><pre>Ans.3 const highIdMarks=[];
+      studentRecords.forEach(item=>{
+      if(item.id>120 && item.marks>50){
+          highIdMarks.push(item)
+      }
+      });
+      console.log(highIdMarks);</pre>
+    </p>
+    <p>Q.4 Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students. ?</p>
+    <p><pre>Ans.4 let sumOFMarks=0;
+      studentRecords.map(item=>{
+          sumOFMarks+=item.marks;
+      })
+      console.log(sumOFMarks);</pre>
+    </p>
+    <p>Q.5 Complete the function in the editor. In which you are given an object and a digit N as a parameter.In the object there are two variable id and houseno are defined as a data member. You have to multiply both the data members with a given digit N.</p>
+    <p><pre>Ans.5 function Check(a,obj1) {
+      obj1.id=obj1.id*a;
+      obj1.houseno=obj1.houseno*a;
+      return obj1;
+      }</pre>
+    </p>
+    <p>Q.6 You are given two strings S and P, and your task is to concatenate them and return the concatenated string. Note: You have to complete joinStrings function. No need to take any input.</p>
+    <p><pre>Ans.6 function Check(obj1) {
+      var count=obj1.p1;
+      count+=obj1.p2;
+      count+=obj1.p3;
+      return(count);
+    }
+  </pre>
+    </p>
+    <p>Q.7 Complete the function in the editor. In which you are given an object as a parameter. That object contains two variables name and id. Your task is to compare the object name and id to the new_name and new_id given there as a parameter. Return "true" if new_name and id are same as objects name and id otherwise return "false".</p>
+    <p><pre>Ans.7 function check(obj1,a,b) {
+      if ((obj1.name===a) && (obj1.id===b))
+      {
+        return(true);
+      }
+      else 
+      {
+        return(false);
+      }
+  }
+  </pre>
+    </p>
+    <p>Q.8 Complete the function in the editor. In which you are given two objects as a parameter.In which you have to merge two objects and return a single object.</p>
+    <p><pre>Ans.8 function Check(obj1,obj2) {
+      const obj={};
+      for (let i in obj1)
+      {
+        obj[i]=obj1[i];
+      }
+      for (let i in obj2)
+      {
+        obj[i]=obj2[i];
+      }
+      return(obj);
+  }
+  </pre>
+    </p>
+</body>
+</html>
